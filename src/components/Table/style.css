@@ -1,0 +1,31 @@
+.table-body {
+    max-width: 954px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.title {
+    font-family: Montserrat, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 32px;
+    display: flex;
+    align-items: center;
+    color: #222222;
+    margin-bottom: 40px;
+}
+
+.main-input {
+    background: #FFFFFF;
+    border: 1px solid #EBEBEB;
+    box-sizing: border-box;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    height: 45px;
+    width: 100%;
+}
+
+.main-input::placeholder {
+    margin-right: 37px;
+}
