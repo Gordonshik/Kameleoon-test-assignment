@@ -3,7 +3,9 @@ import Table from './components/Table'
 
 function App() {
   return (
-    <div>
+    <div style={{
+        backgroundColor: '#E5E5E5'
+    }}>
       <Table />
     </div>
   );

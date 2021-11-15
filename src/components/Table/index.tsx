@@ -58,32 +58,26 @@ const Table: React.FC<ITable> = ({...props}) => {
         ''
     ]
 
-    const obj = [
-        {
-            id: 1,
-            name: 'Order basket redesing',
-            type: 'Classic',
-            status: 'Online',
-            siteId: 'market.company.com'
-        }
-    ]
-
     const getTableRows = (arr: Test[]) => arr.map(item =>
-        <thead>
-            <tr>
-                <td>{item.name}</td>
-                <td>{item.type}</td>
-                <td>{item.status}</td>
-                <td>{item.name}</td>
-                <td><button /></td>
+            <tr key={item.id}>
+                <td className='table-name'>{item.name}</td>
+                <td className='table-type'>{item.type}</td>
+                <td className='table-status'>{item.status}</td>
+                <td className='table-name'>{item.name}</td>
+                <td className='table-btn'>
+                    <button>
+                        <span className='btn-text'>
+                            Results
+                        </span>
+                    </button>
+                </td>
             </tr>
-        </thead>
     )
 
     const tableRows = getTableRows(tests)
 
-    const getTableTop = (arr: string[]) => arr.map(item => <th>{item}</th>)
-    const tableTop = <><tr>{getTableTop(headerColumns)}</tr><tr></tr></>
+    const getTableTop = (arr: string[]) => arr.map(item => <th className='table-top'>{item}</th>)
+    const tableTop = <tr>{getTableTop(headerColumns)}</tr>
 
     return <div className='table-body'>
         <h1 className='title'>Dashboard</h1>
@@ -91,8 +85,12 @@ const Table: React.FC<ITable> = ({...props}) => {
                  className='main-input'
                  placeholder='What test are you looking for?'/>
         <table>
-            {tableTop}
-            {tableRows}
+            <thead>
+                {tableTop}
+            </thead>
+            <tbody>
+                {tableRows}
+            </tbody>
         </table>
     </div>
 
