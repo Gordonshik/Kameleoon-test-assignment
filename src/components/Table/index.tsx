@@ -76,8 +76,8 @@ const Table: React.FC<ITable> = ({...props}) => {
 
     const tableRows = getTableRows(tests)
 
-    const getTableTop = (arr: string[]) => arr.map(item => <th className='table-top'>{item}</th>)
-    const tableTop = <tr>{getTableTop(headerColumns)}</tr>
+    const getTableTop = (arr: string[]) => arr.map(item => <th key={item} className='table-top'>{item}</th>)
+    const tableTop = <tr className='top-row'>{getTableTop(headerColumns)}</tr>
 
     return <div className='table-body'>
         <h1 className='title'>Dashboard</h1>

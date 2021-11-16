@@ -1,0 +1,15 @@
+.btn {
+    background: #2EE5AC;
+    border-radius: 10px;
+    width: 95px;
+    height: 30px;
+    border-radius: 10px;
+}
+
+.results {
+    background: #2EE5AC;
+}
+
+.finalize {
+    background: #7D7D7D;
+}
