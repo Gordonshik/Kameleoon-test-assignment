@@ -11,7 +11,9 @@ const Button: React.FC<IButton> = ({...props}) => {
     return <button
             type='button'
             className={`btn ${isResults ? 'results' : 'finalize'}`}>
-                {isResults ? 'Results' : 'Finalize'}
+                <span className='btn-text'>
+                    {isResults ? 'Results' : 'Finalize'}
+                </span>
             </button>
 }
 

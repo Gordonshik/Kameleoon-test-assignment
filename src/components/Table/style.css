@@ -14,6 +14,7 @@
     align-items: center;
     color: #222222;
     margin-bottom: 40px;
+    margin-top: 20px;
 }
 
 .main-input {
@@ -100,7 +101,6 @@ tr {
 button {
     width: 95px;
     height: 30px;
-    background: #2EE5AC;
     font-family: Montserrat, serif;
     font-style: normal;
     font-weight: 600;
@@ -115,6 +115,6 @@ button {
     align-items: center;
 }
 
-.btn-text {
-    margin: 0 auto;
+table {
+    border-collapse: collapse;
 }

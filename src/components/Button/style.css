@@ -6,6 +6,10 @@
     border-radius: 10px;
 }
 
+.btn-text {
+    margin: 0 auto;
+}
+
 .results {
     background: #2EE5AC;
 }

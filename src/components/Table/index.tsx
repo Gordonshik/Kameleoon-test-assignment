@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import * as React from 'react'
 import './style.css'
 import { getSites, getTests } from '../../api'
+import Button from '../Button'
 
 enum Type {
     CLASSIC = "CLASSIC",
@@ -42,12 +43,12 @@ const Table: React.FC<ITable> = ({...props}) => {
     useEffect(() => {
         getSites()
             .then(res => setCompanies(res?.data))
-    })
+    },[])
 
     useEffect(() => {
         getTests()
             .then(res => setTests(res?.data))
-    });
+    },[]);
 
 
     const headerColumns = [
@@ -58,18 +59,27 @@ const Table: React.FC<ITable> = ({...props}) => {
         ''
     ]
 
+    const getStatusColor = (word: string) => {
+        switch (word) {
+            case('ONLINE'): return '#1BDA9D'
+            case('STOPPED'): return '#FF8346'
+            case('DRAFT'): return '#5C5C5C'
+            default: console.log('error')
+        }
+    }
+
     const getTableRows = (arr: Test[]) => arr.map(item =>
             <tr key={item.id}>
                 <td className='table-name'>{item.name}</td>
                 <td className='table-type'>{item.type}</td>
-                <td className='table-status'>{item.status}</td>
+                <td
+                    className='table-status'
+                    style={{
+                        color: `${getStatusColor(item.status)}`
+                    }}>{item.status}</td>
                 <td className='table-name'>{item.name}</td>
                 <td className='table-btn'>
-                    <button>
-                        <span className='btn-text'>
-                            Results
-                        </span>
-                    </button>
+                    <Button isResults={true} />
                 </td>
             </tr>
     )
